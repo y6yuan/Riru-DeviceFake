@@ -39,6 +39,6 @@ Note, reboot (or kill zygote) is required to let the new settings take effect.
 `/data/adb/riru/modules/device_fake/config/builds/<key>` (file content is value)
 
 ### Credits
-[RikkaW](https://github.com/RikkaApps) - Creator of Riru Magisk module, which provides a way to inject codes into zygote process
-[topjohnwu](https://github.com/topjohnwu) - Creator of Magisk
-[MiPushFrameWork](https://github.com/MiPushFramework) - MiPushFakeForRiru
+- [RikkaW](https://github.com/RikkaApps) - Creator of Riru Magisk module, which provides a way to inject codes into zygote process
+- [topjohnwu](https://github.com/topjohnwu) - Creator of Magisk
+- [MiPushFrameWork](https://github.com/MiPushFramework) - MiPushFakeForRiru
