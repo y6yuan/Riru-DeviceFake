@@ -1,6 +1,8 @@
 #pragma once
 
+#include <map>
 #include <string>
+#include <unistd.h>
 
 namespace Config {
 
@@ -17,6 +19,12 @@ namespace Config {
     namespace Properties {
 
         Property *Find(const char *name);
+    }
+
+    namespace Builds {
+        Property *Find(const char *name);
+        std::map<std::string, Property *>::iterator Begin();
+        std::map<std::string, Property *>::iterator End();
     }
 
     namespace Packages {

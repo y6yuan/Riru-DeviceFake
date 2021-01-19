@@ -62,16 +62,23 @@ CONFIG_PATH="$RIRU_MODULE_PATH/config"
 if [ ! -d "$CONFIG_PATH/properties" ]; then
     ui_print "- Creating default configuration (1)"
     mkdir -p "$CONFIG_PATH/properties"
-    echo -n "310030" > "$CONFIG_PATH/properties/gsm.sim.operator.numeric"
-    echo -n "us" > "$CONFIG_PATH/properties/gsm.sim.operator.iso-country"
+    echo -n "HUAWEI" > "$CONFIG_PATH/properties/ro.product.brand"
+    echo -n "HUAWEI" > "$CONFIG_PATH/properties/ro.product.manufacturer"
+    echo -n "NOH-AN00" > "$CONFIG_PATH/properties/ro.product.model"
+fi
+
+if [ ! -d "$CONFIG_PATH/builds" ]; then
+    ui_print "- Creating default configuration (2)"
+    mkdir -p "$CONFIG_PATH/builds"
+    echo -n "HUAWEI" > "$CONFIG_PATH/builds/BRAND"
+    echo -n "HUAWEI" > "$CONFIG_PATH/builds/MANUFACTURER"
+    echo -n "NOH-AN00" > "$CONFIG_PATH/builds/MODEL"
 fi
 
 if [ ! -d "$CONFIG_PATH/packages" ]; then
-    ui_print "- Creating default configuration (2)"
+    ui_print "- Creating default configuration (3)"
     mkdir -p "$CONFIG_PATH/packages"
-    touch "$CONFIG_PATH/packages/com.google.android.gsf"
-    touch "$CONFIG_PATH/packages/com.google.android.gms"
-    touch "$CONFIG_PATH/packages/com.google.android.apps.maps"
+    touch "$CONFIG_PATH/packages/com.huawei.hwid"
 fi
 
 set_perm $CONFIG_PATH 0 0 0600 $RIRU_SECONTEXT

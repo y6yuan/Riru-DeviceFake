@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <sys/system_properties.h>
 #include <xhook/xhook.h>
+#include <jni.h>
 
 #include "riru.h"
 #include "logging.h"
@@ -51,7 +52,39 @@ NEW_FUNC_DEF(void, __system_property_read_callback, const prop_info *pi, callbac
     old___system_property_read_callback(pi, my_callback, cookie);
 }
 
-void Hook::install() {
+void inject_build(JNIEnv *env) {
+    if (env == nullptr) {
+        LOGW("failed to inject android.os.Build due to env is null");
+        return;
+    }
+
+    jclass build_class = env->FindClass("android/os/Build");
+    if (build_class == nullptr) {
+        LOGW("failed to inject android.os.Build due to build is null");
+        return;
+    }
+
+    for (auto it = Config::Builds::Begin(); it != Config::Builds::End(); ++it) {
+        jfieldID id = env->GetStaticFieldID(build_class, it->first.c_str(), "Ljava/lang/String;");
+        if (id != nullptr) {
+            jstring new_value = env->NewStringUTF(it->second->value.c_str());
+            env->SetStaticObjectField(build_class, id, new_value);
+
+            if(env->ExceptionCheck())
+            {
+                env->ExceptionClear();
+            }
+
+            env->DeleteLocalRef(new_value);
+
+            LOGI("Inject build: android.os.Build.%s -> %s", it->first.c_str(), it->second->value.c_str());
+        }
+    }
+}
+
+
+void Hook::install(JNIEnv *env) {
+    inject_build(env);
     XHOOK_REGISTER(__system_property_get);
 
     if (android::GetApiLevel() >= 26) {

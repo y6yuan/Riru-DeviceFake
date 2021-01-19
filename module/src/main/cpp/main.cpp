@@ -61,7 +61,7 @@ static void appProcessPost(
 
     if (Config::Packages::Find(package_name)) {
         LOGI("install hook for %d:%s", uid / 100000, package_name);
-        Hook::install();
+        Hook::install(env);
     }
 }
 

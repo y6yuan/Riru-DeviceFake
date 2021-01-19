@@ -1,5 +1,6 @@
 #pragma once
+#include <jni.h>
 
 namespace Hook {
-    void install();
+    void install(JNIEnv *env);
 }

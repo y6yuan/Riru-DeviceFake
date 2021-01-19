@@ -1,10 +1,10 @@
 ext {
-    moduleId = "location_report_enabler"
-    moduleName = "Location Report Enabler"
-    moduleAuthor = "Rikka"
-    moduleDescription = "Enable Google Feed & Timeline & Location reprot in unsupported regions by changing system properties in related packages."
-    moduleVersion = "v10.2"
-    moduleVersionCode = 15
+    moduleId = "device_fake"
+    moduleName = "Device Fake"
+    moduleAuthor = "y6yuan"
+    moduleDescription = "Fake device by changing system properties and inject builds in related packages."
+    moduleVersion = "v1"
+    moduleVersionCode = 1
     moduleMinRiruApiVersion = 9
     moduleMinRiruVersionName = "v23.0"
     moduleRiruApiVersion = 10
