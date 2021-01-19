@@ -1,4 +1,4 @@
-# Riru - Location Report Enabler
+# Riru - Device Fake
 
 A module of [Riru](https://github.com/RikkaApps/Riru). Fake device by changing system properties and inject builds in related packages.
 
