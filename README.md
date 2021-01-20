@@ -41,4 +41,4 @@ Note, reboot (or kill zygote) is required to let the new settings take effect.
 ### Credits
 - [RikkaW](https://github.com/RikkaApps) - Creator of Riru Magisk module, which provides a way to inject codes into zygote process
 - [topjohnwu](https://github.com/topjohnwu) - Creator of Magisk
-- [MiPushFrameWork](https://github.com/MiPushFramework) - MiPushFakeForRiru
+- [MiPushFrameWork](https://github.com/MiPushFramework) - MiPushFakeForRiru(https://github.com/MiPushFramework/MiPushFakeForRiru)
