@@ -1,8 +1,8 @@
 #include <cstring>
 #include <unistd.h>
 #include <sys/system_properties.h>
-#include <xhook/xhook.h>
 #include <jni.h>
+#include <xhook.h>
 
 #include "riru.h"
 #include "logging.h"

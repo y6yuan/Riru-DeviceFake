@@ -2,7 +2,9 @@
 
 A module of [Riru](https://github.com/RikkaApps/Riru). Fake device by changing system properties and inject builds in related packages.
 
-## What does this module do
+## User guide
+
+### What does this module do
 
 By default, `__system_property_get` and `__system_property_read_callback` (API 26+) will be hooked, and android.os.Build will be injected in these packages
 
@@ -22,21 +24,21 @@ and the value of android.os.Build will be injected
 * `MODEL` -> `NOH-AN00`
 
 
-## Configuration
+### Configuration
 
 Note, reboot (or kill zygote) is required to let the new settings take effect.
 
-### Packages
+#### Packages
 
-`/data/adb/riru/modules/device_fake/config/packages/<package name>`
+`/data/adb/modules/riru_device_fake/config/packages/<package name>`
 
-### Properties
+#### Properties
 
-`/data/adb/riru/modules/device_fake/config/properties/<key>` (file content is value)
+`/data/adb/modules/riru_device_fake/config/properties/<key>` (file content is value)
 
-### Builds
+## Build
 
-`/data/adb/riru/modules/device_fake/config/builds/<key>` (file content is value)
+`/data/adb/modules/riru_device_fake/config/builds/<package name>`
 
 ### Credits
 - [RikkaW](https://github.com/RikkaApps) - Creator of Riru Magisk module, which provides a way to inject codes into zygote process
