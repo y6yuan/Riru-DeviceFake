@@ -36,7 +36,7 @@ Note, reboot (or kill zygote) is required to let the new settings take effect.
 
 `/data/adb/modules/riru_device_fake/config/properties/<key>` (file content is value)
 
-## Build
+#### Build
 
 `/data/adb/modules/riru_device_fake/config/builds/<package name>`
 
