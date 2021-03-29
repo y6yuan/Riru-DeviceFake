@@ -75,15 +75,15 @@ fi
 if [ ! -d "$MODPATH"/config ]; then
   ui_print "- Creating default configuration"
 
-  mkdir -p "$MODPATH/properties"
-  echo -n "HUAWEI" > "$MODPATH/properties/ro.product.brand"
-  echo -n "HUAWEI" > "$MODPATH/properties/ro.product.manufacturer"
-  echo -n "NOH-AN00" > "$MODPATH/properties/ro.product.model"
+  mkdir -p "$MODPATH/config/properties"
+  echo -n "HUAWEI" > "$MODPATH/config/properties/ro.product.brand"
+  echo -n "HUAWEI" > "$MODPATH/config/properties/ro.product.manufacturer"
+  echo -n "NOH-AN00" > "$MODPATH/config/properties/ro.product.model"
 
-  mkdir -p "$MODPATH/builds"
-  echo -n "HUAWEI" > "$MODPATH/builds/BRAND"
-  echo -n "HUAWEI" > "$MODPATH/builds/MANUFACTURER"
-  echo -n "NOH-AN00" > "$MODPATH/builds/MODEL"
+  mkdir -p "$MODPATH/config/builds"
+  echo -n "HUAWEI" > "$MODPATH/config/builds/BRAND"
+  echo -n "HUAWEI" > "$MODPATH/config/builds/MANUFACTURER"
+  echo -n "NOH-AN00" > "$MODPATH/config/builds/MODEL"
 
   mkdir -p "$MODPATH/config/packages"
   touch "$MODPATH/config/packages/com.huawei.hwid"
